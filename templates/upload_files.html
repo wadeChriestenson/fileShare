@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Standard File Transfer Company</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/upload_v1.css' %}" rel="stylesheet">
+      <link rel="icon" href="{%  static 'img/icons_form_100x100.png' %}" type="image/gif" sizes="100x100">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+    <div class="titleWrapper">
+        <img src="{% static 'img/logo_form.png' %}" class="logo" alt="Logo of a form.">
+        <div class="textWrapper">
+    <h1 class="company">Standard File Transfer Company</h1>
+            <h4 class="motto">Specializing in Data Handling</h4>
+            </div>
+    </div>
+</header>
+<div class="emptySpacer">
+        <form action="/" target="_self" method="post">
+        {% csrf_token %}
+            <button class="btn" type="submit">Home</button>
+    </form>
+    <form action="download_files.html" target="_self" method="post">
+        {% csrf_token %}
+        <button class="btn" type="submit">Download a File</button>
+    </form>
+</div>
+<div class="wrapper">
+<div class="container">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-info alert-dismissible fade show text-center" role="alert">
+            {{  message }}
+            <button style="visibility: hidden" type="button" class="btn-close" data-bs-dismiss="alert" aria-label='Close'></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+<div class="form">
+            <h2>Upload Files</h2><br><br>
+    <form  method="post" enctype="multipart/form-data">
+        {%  csrf_token %}
+        {{  form }}
+        <button id="btn" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</div>
+</body>
+</html>

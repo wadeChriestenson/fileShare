@@ -5,6 +5,11 @@ from django.contrib.auth.decorators import login_required, permission_required
 
 
 # Create your views here.
+from standard.forms import FileForm
+from standard.models import userFiles
+from django.contrib import messages
+
+
 def index(request):
     return render(request, 'index.html', {})
 
@@ -21,3 +26,17 @@ def logout(request):
 @permission_required('standard.views_user_is_true', raise_exception=True)
 def user_is_true(request):
     return render(request, 'user.html', {})
+
+def upload(request):
+    if request.method == 'POST':
+        form = FileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'File Uploaded Successfully')
+    form = FileForm()
+    return render(request, 'upload_files.html', {'form': form})
+
+
+def download(request):
+    files = userFiles.objects.all()
+    return render(request, 'download_files.html', {'files': files})
