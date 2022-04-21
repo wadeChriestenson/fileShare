@@ -1,12 +1,30 @@
-{% extends 'base.html' %}
-{% load humanize %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Standard File Transfer Company</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/user.css' %}" rel="stylesheet">
+      <link rel="icon" href="{%  static 'img/icons_form_100x100.png' %}" type="image/gif" sizes="100x100">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
+<header class="header">
+    <div class="titleWrapper">
+        <img src="{% static 'img/logo_form.png' %}" class="logo" alt="Logo of a form.">
+        <div class="textWrapper">
+    <h1 class="company">Standard File Transfer Company</h1>
+            <h4 class="motto">Specializing in Data Handling</h4>
+            </div>
+    </div>
+</header>
+<div class="emptySpacer">
+    <AmpContent>
+        <a class="button-is-primary" href="/logout/">Logout</a>
+    </AmpContent></div>
 <h1>Welcome Back!!!</h1>
 
 </body>

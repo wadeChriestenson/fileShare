@@ -1,0 +1,61 @@
+body{
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+}
+.header{
+    margin-left: -15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    width: 101vw;
+    border-bottom: 5px solid blue;
+}
+.titleWrapper{
+        margin-top: 13px;
+    margin-left: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.logo{
+    width: 75px;
+    height: 75px;
+}
+.textWrapper{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+.company{
+    margin-top: -5px;
+    font-size: 40px;
+}
+.motto{
+    margin-left: 5px;
+    margin-top: -25px;
+    font-size: 18px;
+}
+.emptySpacer{
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100vw;
+}
+.button-is-primary{
+    /*background-color: blue;*/
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+    /*width: 75px;*/
+    font-size: 24px;
+    color: black;
+    padding: 5px;
+    margin-left: 28vw;
+}
