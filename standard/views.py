@@ -39,4 +39,5 @@ def upload(request):
 
 def download(request):
     files = userFiles.objects.all()
+    print(files.values())
     return render(request, 'download_files.html', {'files': files})
