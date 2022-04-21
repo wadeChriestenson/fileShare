@@ -43,7 +43,7 @@ AUTHENTICATION_BACKENDS = {
 }
 
 LOGIN_URL = '/login/auth0'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/user.html'
 LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
