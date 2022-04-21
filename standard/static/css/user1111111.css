@@ -41,13 +41,12 @@ body{
     height: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: right;
-}
-.button{
-    display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
-    width: 100vw;
+}
+.amp{
+        margin-top: 60px;
+    display: flex;
+    justify-content: center;
 }
 .button-is-primary{
     /*background-color: blue;*/
@@ -57,5 +56,6 @@ body{
     font-size: 24px;
     color: black;
     padding: 5px;
-    margin-left: 28vw;
+    margin-left: -15vw;
+
 }
