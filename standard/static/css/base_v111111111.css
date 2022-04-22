@@ -43,11 +43,20 @@ body{
     flex-direction: row;
     justify-content: right;
 }
-.button{
+.mainWrap{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     width: 100vw;
+}
+h2{
+    margin-top: 50px;
+    width: 100vw;
+    text-align: center;
+}
+.amp{
+    display: flex;
+    justify-content: center;
 }
 .button-is-primary{
     /*background-color: blue;*/
@@ -57,5 +66,5 @@ body{
     font-size: 24px;
     color: black;
     padding: 5px;
-    margin-left: 28vw;
+    /*margin-left: 28vw;*/
 }
