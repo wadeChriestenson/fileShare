@@ -43,16 +43,12 @@
             <th>Title</th>
             <th>File Name</th>
             <th>Download</th>
-            <th>Owner</th>
-            <th>Date</th>
         </tr>
     {% for i in files %}
         <tr>
         <td><h4>{{ i.file_name }}</h4></td>
             <td><h4>{{ i.file.file }}</h4></td>
             <td> <a href="{{ i.file.url }}" download>Click Here</a></td>
-        <td><h4>{{ i.file.user_id }}</h4></td>
-        <td><h4>{{ i.file.date }}</h4></td>
         </tr>
     {% endfor %}
 </table>
