@@ -38,33 +38,42 @@ body{
 }
 .emptySpacer{
     width: 100vw;
-    height: 50px;
+    height: 150px;
     display: flex;
     flex-direction: row;
     justify-content: right;
-}
-.mainWrap{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 100vw;
 }
 h2{
     margin-top: 50px;
     width: 100vw;
     text-align: center;
 }
+.mainWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+}
 .amp{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    /*border: 1px solid black;*/
+    width: 150px;
+    height: 150px;
+    border-radius: 5px 5px;
+    box-shadow: 2px 2px darkgrey;
+    background-color: whitesmoke;
+
+}
+h3{
+    text-align: center;
+    margin-top: -10px;
 }
 .button-is-primary{
-    /*background-color: blue;*/
-    /*border: 1px solid black;*/
-    border-radius: 5px;
-    /*width: 75px;*/
     font-size: 24px;
     color: black;
     padding: 5px;
-    /*margin-left: 28vw;*/
+    margin-left: 35px;
+
 }
