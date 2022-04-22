@@ -44,43 +44,57 @@ body{
     justify-content: space-evenly;
 }
 .btn{
-    margin-top: 2px;
-    width: 100%;
-    height: 20px;
+    margin-top: 15px;
     background: none;
     border: none;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
+    /*width: 75px;*/
+    font-size: 18px;
+    color: black;
+    padding: 5px;
+    text-decoration: underline;
 }
 .btn:hover{
-    /*border: 1px solid black;*/
-    background-color: silver;
+    cursor: pointer;
+}
+h2{
+    margin-top: 50px;
+    width: 100vw;
+    text-align: center;
 }
 .wrapper{
-        display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100vw;
-    height: 100%;
-}
-.container{
     display: flex;
     flex-direction: row;
-    justify-content: left;
-    /*width: 50%;*/
-    /*border: 1px solid black;*/
+    justify-content: center;
+    width: 100vw;
 }
-.form{
+table{
+    /*margin-top: 50px;*/
+    border-collapse: collapse;
+    border: 1px solid black;
     width: 50%;
 }
-#btn{
-    width: 100px;
-    height: 30px;
-    background-color: blue;
-    color: whitesmoke;
-    border: none;
-    border-radius: 3px;
+th{
+    /*height: 10px;*/
+    font-size: 20px;
 }
-#btn:hover{
-    border: 1px solid black;
+th, td{
+    border: 1px solid blue;
+    text-align: center;
+}
+.amp{
+        margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+.button-is-primary{
+    /*background-color: blue;*/
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+    /*width: 75px;*/
+    font-size: 24px;
     color: black;
+    padding: 5px;
+    margin-left: -15vw;
+
 }

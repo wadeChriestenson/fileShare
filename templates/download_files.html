@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Standard File Transfer Company</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{% static 'css/download_v1.css' %}" rel="stylesheet">
+    <link href="{% static 'css/download_v1111.css' %}" rel="stylesheet">
       <link rel="icon" href="{%  static 'img/icons_form_100x100.png' %}" type="image/gif" sizes="100x100">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +20,12 @@
             <h4 class="motto">Specializing in Data Handling</h4>
             </div>
     </div>
+            <AmpContent class="amp">
+        <a class="button-is-primary" href="/logout/">Logout</a>
+    </AmpContent>
 </header>
 <div class="emptySpacer">
-    <form action="/" target="_self" method="post">
+    <form action="user.html" target="_self" method="post">
         {% csrf_token %}
         <button class="btn" type="submit">Home</button>
     </form>
@@ -41,10 +44,11 @@
             <th>File Name</th>
             <th>Download</th>
             <th>Owner</th>
+            <th>Date</th>
         </tr>
     {% for i in files %}
         <tr>
-        <td><h4>{{ i.file }}</h4></td>
+        <td><h4>{{ i.file_name }}</h4></td>
             <td><h4>{{ i.file.file }}</h4></td>
             <td> <a href="{{ i.file.url }}" download>Click Here</a></td>
         <td><h4>{{ i.file.user_id }}</h4></td>

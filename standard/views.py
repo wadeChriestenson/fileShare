@@ -3,7 +3,6 @@ from django.contrib.auth import logout as django_logout
 from django.conf import settings
 from django.contrib.auth.decorators import login_required, permission_required
 
-
 # Create your views here.
 from standard.forms import FileForm
 from standard.models import userFiles
@@ -27,6 +26,8 @@ def logout(request):
 def user_is_true(request):
     return render(request, 'user.html', {})
 
+
+@permission_required('standard.upload', raise_exception=True)
 def upload(request):
     if request.method == 'POST':
         form = FileForm(request.POST, request.FILES)
@@ -37,7 +38,8 @@ def upload(request):
     return render(request, 'upload_files.html', {'form': form})
 
 
+@permission_required('standard.views_download', raise_exception=True)
 def download(request):
     files = userFiles.objects.all()
-    print(files.values())
+    print(files)
     return render(request, 'download_files.html', {'files': files})
