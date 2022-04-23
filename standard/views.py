@@ -23,7 +23,6 @@ def logout(request):
 
 @login_required
 def user_is_true(request):
-    user = u
     return render(request, 'user.html', {})
 
 
