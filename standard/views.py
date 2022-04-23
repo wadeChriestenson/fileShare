@@ -1,16 +1,13 @@
-import os.path
-
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout as django_logout
 from django.conf import settings
 from django.contrib.auth.decorators import login_required, permission_required
-
-# Create your views here.
 from standard.forms import FileForm
 from standard.models import userFiles
 from django.contrib import messages
 
 
+# Create your views here.
 def index(request):
     return render(request, 'index.html', {})
 
@@ -24,12 +21,10 @@ def logout(request):
     return redirect(f'https://{domain}/v2/logout?client_id={client_id}&returnTo={return_to}')
 
 
-@permission_required('standard.views_user_is_true', raise_exception=True)
 def user_is_true(request):
     return render(request, 'user.html', {})
 
 
-@permission_required('standard.upload', raise_exception=True)
 def upload(request):
     if request.method == 'POST':
         form = FileForm(request.POST, request.FILES)
@@ -40,7 +35,6 @@ def upload(request):
     return render(request, 'upload_files.html', {'form': form})
 
 
-@permission_required('standard.views_download', raise_exception=True)
 def download(request):
     files = userFiles.objects.all()
     print(files)
