@@ -1,6 +1,7 @@
 body{
     font-family: 'Playfair Display', serif;
     overflow-x: hidden;
+    background-color: whitesmoke;
 }
 .header{
     margin-left: -15px;
@@ -9,7 +10,8 @@ body{
     justify-content: space-between;
     height: 100px;
     width: 101vw;
-    border-bottom: 5px solid blue;
+    /*border-bottom: 5px solid blue;*/
+    background-color: snow;
 }
 .titleWrapper{
         margin-top: 13px;
@@ -50,21 +52,21 @@ h2{
 }
 .mainWrap{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
     width: 100vw;
+    /*border: 1px solid black;*/
 }
 .amp{
     display: flex;
     flex-direction: column;
     justify-content: center;
     /*border: 1px solid black;*/
-    width: 150px;
+    width: 300px;
     height: 150px;
-    border-radius: 5px 5px;
-    box-shadow: 2px 2px darkgrey;
-    background-color: whitesmoke;
-
+    border-radius: 15px 15px;
+    background-color: snow;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 h3{
     text-align: center;
@@ -72,8 +74,7 @@ h3{
 }
 .button-is-primary{
     font-size: 24px;
-    color: black;
     padding: 5px;
-    margin-left: 35px;
-
+    margin-left: 22.5%;
+    color: black;
 }

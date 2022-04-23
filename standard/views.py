@@ -21,10 +21,13 @@ def logout(request):
     return redirect(f'https://{domain}/v2/logout?client_id={client_id}&returnTo={return_to}')
 
 
+@login_required
 def user_is_true(request):
+    user = u
     return render(request, 'user.html', {})
 
 
+@login_required
 def upload(request):
     if request.method == 'POST':
         form = FileForm(request.POST, request.FILES)
@@ -35,6 +38,7 @@ def upload(request):
     return render(request, 'upload_files.html', {'form': form})
 
 
+@login_required
 def download(request):
     files = userFiles.objects.all()
     print(files)
