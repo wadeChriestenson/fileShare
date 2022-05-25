@@ -31,7 +31,7 @@ def upload(request):
     if request.method == 'POST':
         form = FileForm(request.POST, request.FILES)
         if form.is_valid():
-            print(form)
+            # print(form)
             form.save()
             messages.success(request, 'File Uploaded Successfully')
     form = FileForm()
