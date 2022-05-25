@@ -82,8 +82,20 @@ h2{
     flex-direction: column;
     /*border: 1px solid black;*/
 }
+.middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .fileForm{
-    margin-left: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid whitesmoke;
+    width: 25%;
+    border-radius: 15px 15px;
+    padding: 15px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 .amp{
         margin-top: 60px;

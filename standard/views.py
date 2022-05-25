@@ -31,6 +31,7 @@ def upload(request):
     if request.method == 'POST':
         form = FileForm(request.POST, request.FILES)
         if form.is_valid():
+            print(form)
             form.save()
             messages.success(request, 'File Uploaded Successfully')
     form = FileForm()
@@ -40,5 +41,9 @@ def upload(request):
 @login_required
 def download(request):
     files = userFiles.objects.all()
-    print(files)
-    return render(request, 'download_files.html', {'files': files})
+    print(files.values())
+    img = []
+    for i in files:
+        img.append(i.file)
+    print(img)
+    return render(request, 'download_files.html', {'files': files, 'img': img})

@@ -10,8 +10,10 @@ class User(AbstractUser):
 
 class userFiles(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    userName = models.CharField(max_length=100)
     file = models.FileField()
     file_name = models.CharField(max_length=100)
+    desc = models.TextField(max_length=250)
     date = models.DateTimeField(auto_now_add=True)
 
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Standard File Transfer Company</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{% static 'css/user1111111.css' %}" rel="stylesheet">
+    <link href="{% static 'css/user11111.css' %}" rel="stylesheet">
       <link rel="icon" href="{%  static 'img/icons_form_100x100.png' %}" type="image/gif" sizes="100x100">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,18 +27,23 @@
 <div class="emptySpacer">
     <h1>Welcome Back!!!</h1>
 </div>
+<div class="spacer"></div>
 <h3>Select an Option Below</h3>
 
-<p>Upload File - choose a file from your PC to upload to the server</p>
-<p>Download File - choose a file from the server to download to your PC</p>
+{#<p>Upload File - choose a file from your PC to upload to the server</p>#}
+{#<p>Download File - choose a file from the server to download to your PC</p>#}
 
     <div class="selections">
+        <aside></aside>
+        <div class="formHolder">
     <form method="post" target="_self" action="upload_files.html">{% csrf_token %}
-        <button type="submit">Upload File</button>
+        <button type="submit">Upload File</button><p>- choose a file from your PC to upload to the server</p>
     </form>
         <form method="post" target="_self" action="download_files.html">{% csrf_token %}
-        <button type="submit">Download File</button>
+        <button type="submit">Download File</button><p>- choose a file from the server to download to your PC</p>
     </form>
+            </div>
+        <aside></aside>
 </div>
 
 </body>
