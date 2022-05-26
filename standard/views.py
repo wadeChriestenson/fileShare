@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from standard.forms import FileForm
 from standard.models import userFiles
 from django.contrib import messages
+import pandas as pd
 
 
 # Create your views here.
@@ -31,7 +32,8 @@ def upload(request):
     if request.method == 'POST':
         form = FileForm(request.POST, request.FILES)
         if form.is_valid():
-            # print(form)
+            print(form.clean())
+            form.clean()
             form.save()
             messages.success(request, 'File Uploaded Successfully')
     form = FileForm()
@@ -40,10 +42,7 @@ def upload(request):
 
 @login_required
 def download(request):
-    files = userFiles.objects.all()
-    print(files.values())
-    img = []
-    for i in files:
-        img.append(i.file)
-    print(img)
-    return render(request, 'download_files.html', {'files': files, 'img': img})
+    files = userFiles.objects.all().values().order_by('file_name')
+    for file in files:
+        print(file)
+    return render(request, 'download_files.html', {'files': files})
