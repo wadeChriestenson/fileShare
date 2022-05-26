@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from standard.forms import FileForm
 from standard.models import userFiles
 from django.contrib import messages
-import pandas as pd
+
 
 
 # Create your views here.
@@ -27,8 +27,8 @@ def user_is_true(request):
     from .models import User
     userName = User.objects.all()
     print(userName)
-    user = userName[2]
-    return render(request, 'user.html', {'user': user})
+    # user = userName[2]
+    return render(request, 'user.html', {})
 
 
 @login_required
@@ -47,7 +47,7 @@ def upload(request):
 @login_required
 def download(request):
     files = userFiles.objects.all().values().order_by('file_name')
-    from .models import User
-    userName = User.objects.values()
-    print(userName[1]['username'])
+    # from .models import User
+    # userName = User.objects.values()
+    # print(userName[1]['username'])
     return render(request, 'download_files.html', {'files': files})
