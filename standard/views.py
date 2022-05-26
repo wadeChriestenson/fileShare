@@ -24,7 +24,11 @@ def logout(request):
 
 @login_required
 def user_is_true(request):
-    return render(request, 'user.html', {})
+    from .models import User
+    userName = User.objects.all()
+    print(userName)
+    user = userName[2]
+    return render(request, 'user.html', {'user': user})
 
 
 @login_required
