@@ -47,7 +47,4 @@ def upload(request):
 @login_required
 def download(request):
     files = userFiles.objects.all().values().order_by('file_name')
-    # from .models import User
-    # userName = User.objects.values()
-    # print(userName[1]['username'])
     return render(request, 'download_files.html', {'files': files})

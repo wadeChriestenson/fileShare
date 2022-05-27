@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Standard File Transfer Company</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{% static 'css/download_v11122222222222.css' %}" rel="stylesheet">
+    <link href="{% static 'css/download_v111222222222.css' %}" rel="stylesheet">
       <link rel="icon" href="{%  static 'img/icons_form_100x100.png' %}" type="image/gif" sizes="100x100">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,44 +34,21 @@
             <button class="btn" type="submit">Upload a File</button>
     </form>
 </div>
-<div class="container mt-5">
     <h2 class="text-info">Available Files</h2>
-</div>
 <div class="wrapper">
 <aside></aside>
-<table class="container mt-5">
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Download</th>
-            <th>Uploaded Date</th>
-        </tr>
+<div class="fileWrapper">
     {% for i in files %}
-        <tr>
-        <td><h4>{{ i.file_name }}</h4></td>
-            <td><h4>{{ i.desc }}</h4></td>
-            <td> <a href="{{ i.file.url }}" download>Click Here</a></td>
-            <td>{{ i.date }}</td>
-            <td>
-                <button>
-                <div class=trash>
-                    <div class="top">
-                        <div class="paper"></div>
-                    </div>
-                    <div class="box"></div>
-                    <div class="check"></div>
-                    <svg viewBox="0 0 8 6">
-                        <polyline points="1 3.4 2.71418571 5 7 1"></polyline>
-                    </svg>
-                </div>
-                    <span>Delete Item</span>
-                </button>
-            </td>
-        </tr>
+<div class="file_container">
+    <h4><u>Title:</u> &nbsp{{ i.file_name }}</h4>
+    <h4><u>Description:</u> &nbsp{{ i.desc }}</h4>
+    <h4><u>Uploaded Date:</u> &nbsp{{ i.date }}</h4>
+    <h4><u>Download:</u> &nbsp<a href="{{ i.file.url }}" download>Click Here</a></h4>
+    <h4><u>Delete:</u> &nbsp<button value="{{ i.user_id }}" class="button">Click Here</button></h4>
+</div>
     {% endfor %}
-</table>
-<aside>
-</aside>
+</div>
+<aside></aside>
 </div>
 </body>
 </html>
