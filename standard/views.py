@@ -21,7 +21,7 @@ def logout(request):
     return redirect(f'https://{domain}/v2/logout?client_id={client_id}&returnTo={return_to}')
 
 
-@login_required
+# @login_required
 def user_is_true(request):
     from .models import User
     userName = User.objects.all()

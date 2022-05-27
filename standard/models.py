@@ -8,6 +8,7 @@ class User(AbstractUser):
     pass
 
 
+
 class userFiles(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     userName = models.CharField(max_length=100)
