@@ -69,33 +69,40 @@ h2{
     justify-content: center;
 }
 .fileWrapper{
-    display: flex;
+    display: grid;
+    gap:10px 50px;
+    grid-template-columns: auto auto auto;
     justify-content: center;
-    flex-direction: column;
-    width: 25%;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
 }
 .file_container{
-    margin-top: 50px;
+    min-width: 250px;
+    margin-left: -130px;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
      display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     background-color: white; !important;
     color: black;
-    /*border: 1px solid blue;*/
     width: 100%;
-    /*border-radius: 15px 15px 0 0  ;*/
-    padding-top: 10%;
-box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;    padding-bottom: 15px;
-    clip-path: polygon(
-    0% 0%,
-    100% 0%,
-    100% calc(100% - 15px),
-    0% 100%
-    );
+    /*border: 1px solid blue;*/
+    border-radius: 15px;
+    padding-top: 25px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    padding-bottom: 15px;
+}
+
+.file_container:hover{
+    transform: translateX(130px) translateY(16px) rotate(3deg);
+    position: inherit;
+    z-index: 1;
 }
 aside{
-    width: 50%;
+    width: 20%;
 }
 .button{
     font-family: 'Playfair Display', serif;
